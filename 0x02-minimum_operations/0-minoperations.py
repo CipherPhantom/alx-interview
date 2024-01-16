@@ -8,31 +8,22 @@ in the file.
 """
 
 
-def copyAll(string):
-    """Returns input string"""
-    return string
-
-
-def paste(string_1, string_2):
-    """Concatenates two string"""
-    return string_1 + string_2
-
-
 def minOperations(n):
     """Calculates and Returns the fewest number of operations"""
     operations = 0
-    txt_file = "H"
-    copy = ""
+    curr = 1
+    copy = 0
 
     if type(n) != int:
         return operations
 
-    while len(txt_file) < n:
-        if n % len(txt_file) == 0:
-            copy = copyAll(txt_file)
-            txt_file = paste(txt_file, copy)
+    while curr < n:
+        if n % curr == 0:
+            copy = curr
+            curr += copy
             operations += 2
         else:
-            txt_file = paste(txt_file, copy)
+            curr += copy
             operations += 1
+        # print(f"{curr} {'H' * curr}")
     return operations
