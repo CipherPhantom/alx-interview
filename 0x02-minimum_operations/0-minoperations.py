@@ -22,8 +22,9 @@ def minOperations(n):
     """Calculates and Returns the fewest number of operations"""
     operations = 0
     txt_file = "H"
+    copy = ""
 
-    if type(n) != int or n <= 1:
+    if type(n) != int:
         return operations
 
     while len(txt_file) < n:
